@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0px;
+            background-image: url('background3.png'); /* Replace with your background image path */
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            height: 100vh; /* Ensure the body takes up the full height of the viewport */
+        }
+
+        header {
+            background-color: #21323D;
+            color: #FFFFFF;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            z-index: 1; /* Ensure the header is on top of other elements */
+            padding-top: 0px; /* Adds top padding */
+            padding-bottom: 0px; /* Adds bottom padding */
+            padding-left: 0px; /* Adds left padding */
+            padding-right: px; /* Adds right padding */
+        }
+
+        header a {
+            color: #FFFFFF;
+            text-decoration: none;
+            margin:  15px;
+            display: flex;
+            align-items: center;
+        }
+
+        #table_div {
+            font-size: 18px;
+            position: absolute;
+            left: 25%;
+            right: 30%;
+            top: 39%; /* Adjust vertically based on your preference */
+            transform: translateY(-50%); /* Center vertically */
+            margin: auto;
+            width: 100%;
+            font-size: 18px;
+        }
+
+        main {
+          margin: 20px;
+        }
+
+        table {
+          width: 50%;
+          border-collapse: collapse;
+          margin-top: 20px;
+        }
+
+        th, td {
+          border: 1px solid #ddd;
+          padding: 8px;
+          text-align: center;
+          border-bottom: 2px solid #526774; /* Adjust the color and thickness as needed */
+
+        }
+
+        #folderTable tbody td:nth-child(3) {
+        text-decoration: underline;
+        }
+
+        th {
+          background-color: #21323D;
+          color: white;
+          text-align: center;
+        }
+
+        .folder-link {
+          text-decoration: none;
+          color: #333;
+        }
+    </style>
+
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <!-- Left side -->
+        <div style="display: flex; align-items: center;">
+            <!-- Logo -->
+            <img src="logo1.png" alt="Logo" height="60" style="margin:15px;">
+            <!-- Home page link with icon -->
+            <a href="main.html" id="home-link"><img src="home.png" alt="Home" height="20" style="margin-right: 10px;"> Home</a>
+            <!-- Report page link with icon -->
+            <a href="reports.html" id="report-link"><img src="report.png" alt="Report" height="20" style="margin-right: 10px;"> Report</a>
+        </div>
+        <!-- Right side -->
+        <div style="display: flex; align-items: center; margin-right: 30px;">
+            <!-- Sign out link with icon -->
+            <a href="#" onclick="signOut()"><img src="log-out.png" alt="Sign Out" height="30" style="margin-right: 10px;"> Sign Out</a>
+        </div>
+
+        <script>
+            function signOut() {
+                firebase.auth().signOut().then(function () {
+                    // Sign-out successful, redirect to login page
+                    window.location.replace("login.html");
+                }).catch(function (error) {
+                    // An error happened
+                    console.error("Sign out error:", error);
+                });
+            }
+        </script>
+
+    </header>
+
+
+    <div id="table_div">
+      <main>
+      <table id="folderTable" style=" background-color: #fff; margin-top: 100px; position: absolute; top: 50%; left: 25%; right: 25%; transform: translate(-50%, -50%);">
+        <thead>
+          <tr>
+            <th>Report Number</th>
+            <th>Date</th>
+            <th id="more-details-header">More Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Table rows will be dynamically added here using JavaScript -->
+        </tbody>
+      </table>
+    </main>
+  </div>
+    <!-- Include the non-module version of Firebase SDK scripts -->
+
+  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-storage.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/9.6.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.2/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.2/firebase-storage-compat.js"></script>
+
+    <script>
+        // Replace with your actual Firebase configuration
+        var firebaseConfig = {
+      apiKey: "AIzaSyD1L5kjuB6UYTPA8qjzepKQbLTV5BvNwC0",
+      authDomain: "drone-app-e0017.firebaseapp.com",
+      projectId: "drone-app-e0017",
+      storageBucket: "drone-app-e0017.appspot.com",
+      messagingSenderId: "768272782556",
+      appId: "1:768272782556:web:92e165813acee47877d019",
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+
+
+        // Check if the user is authenticated
+        firebase.auth().onAuthStateChanged(function (user) {
+            if (!user) {
+                // Redirect to login page if not logged in
+                window.location.replace("login.html");
+            }
+        });
+
+
+
+      var storageRef = firebase.storage().ref();
+
+    // Fetch folders from Firebase Storage root
+    storageRef.listAll().then(function(result) {
+      var folderTable = document.getElementById('folderTable');
+      var tbody = folderTable.querySelector('tbody');
+
+      // Clear the existing table rows
+      tbody.innerHTML = '';
+
+      // Iterate through the folders and populate the table
+      result.prefixes.forEach(function(prefix, index) {
+        var row = tbody.insertRow(index);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+
+        cell1.textContent = index + 1;
+
+        var folderLink = document.createElement('a');
+        folderLink.href = 'page2.html#' + encodeURIComponent(prefix.name);
+        folderLink.classList.add('folder-link');
+        folderLink.textContent = prefix.name;
+        cell2.appendChild(folderLink);
+
+        var moreDetailsLink = document.createElement('a');
+        moreDetailsLink.href = 'page2.html#' + encodeURIComponent(prefix.name);
+        moreDetailsLink.classList.add('folder-link');
+        moreDetailsLink.textContent = 'More Details';
+        moreDetailsLink.onclick = function() {
+          openPage2(prefix.name);
+        };
+        cell3.appendChild(moreDetailsLink);
+      });
+    }).catch(function(error) {
+      console.error('Error fetching folders:', error);
+    });
+
+
+    // ...
+     function openPage2(folderName) {
+       window.location.href = 'page2?folder_name=' + encodeURIComponent(folderName);
+}
+
+    </script>
+</body>
+</html>
+
+
+
+
