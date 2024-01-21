@@ -98,21 +98,26 @@ def update_frame():
 def recognize_known_faces():
     global frame, face_name
     face_name = None
+
     # Find face locations and face encodings in the current frame
     face_locations = face_recognition.face_locations(frame)
     face_encodings = face_recognition.face_encodings(frame, face_locations)
 
     # Loop through each face found in the frame
     for (top, right, bottom, left), face_encoding in zip(face_locations, face_encodings):
-        # Check if the face matches any known faces
-        matches = face_recognition.compare_faces(known_encodings, face_encoding)
-        name = "Unknown"
+        # Declare name as a global variable
+        global name
 
-        # If a match is found, set the name to the corresponding person's name
-        if True in matches:
-            first_match_index = matches.index(True)
-            name = known_names[first_match_index]
+        # Check if the face matches any known faces
+        matches = face_recognition.compare_faces(known_encodings, face_encoding, tolerance=0.4)
+        best_match_index = matches.index(True) if True in matches else None
+
+        # If a match is found and confidence is high, set the name to the corresponding person's name
+        if best_match_index is not None and matches[best_match_index] and face_recognition.face_distance([known_encodings[best_match_index]], face_encoding)[0] < 0.6:
+            name = known_names[best_match_index]
             face_name = name
+        else:
+            name = "Unknown"
 
         # Draw a green rectangle around the face
         cv2.rectangle(frame, (left, top), (right, bottom), (0, 255, 0), 5)
@@ -137,6 +142,7 @@ def recognize_known_faces():
 
         # Draw the text on the frame
         cv2.putText(frame, name, (text_x, text_y), font, text_size, text_color, text_thickness)
+
 
 
 
