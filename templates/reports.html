@@ -84,6 +84,30 @@
           text-decoration: none;
           color: #333;
         }
+
+         .pagination {
+            position: absolute;
+            left: 50%; /* Center horizontally */
+            transform: translateX(-50%); /* Center horizontally */
+            top: 87%; /* Adjust vertically based on your preference */
+        }
+
+        .page-link {
+            margin: 0 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+            text-decoration: none;
+            background-color: #21323D;
+            color: white;
+            border-radius: 5px;
+
+        }
+
+        .page-link:hover {
+            background-color: #526774;
+        }
+
+
     </style>
 
 </head>
@@ -121,8 +145,8 @@
     </header>
 
 
-    <div id="table_div">
-      <main>
+   <div id="table_div">
+    <main>
       <table id="folderTable" style=" background-color: #fff; margin-top: 100px; position: absolute; top: 50%; left: 25%; right: 25%; transform: translate(-50%, -50%);">
         <thead>
           <tr>
@@ -137,6 +161,9 @@
       </table>
     </main>
   </div>
+
+    <div class="pagination" id="pagination"></div>
+
     <!-- Include the non-module version of Firebase SDK scripts -->
 
   <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
@@ -172,7 +199,45 @@
             }
         });
 
+        var itemsPerPage = 10; // Number of items per page
+        var currentPage = 1;   // Current page, initially set to 1
 
+        function showPage(page) {
+            var rows = document.querySelectorAll('#folderTable tbody tr');
+            var startIndex = (page - 1) * itemsPerPage;
+            var endIndex = startIndex + itemsPerPage;
+
+            rows.forEach(function (row, index) {
+                if (index >= startIndex && index < endIndex) {
+                    row.style.display = 'table-row';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        }
+
+        function updatePagination() {
+            var totalRows = document.querySelectorAll('#folderTable tbody tr').length;
+            var totalPages = Math.ceil(totalRows / itemsPerPage);
+
+            var paginationElement = document.getElementById('pagination');
+            paginationElement.innerHTML = '';
+
+            for (var i = 1; i <= totalPages; i++) {
+                var pageLink = document.createElement('a');
+                pageLink.href = '#';
+                pageLink.classList.add('page-link');
+                pageLink.textContent = i;
+
+                pageLink.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    currentPage = parseInt(event.target.textContent);
+                    showPage(currentPage);
+                });
+
+                paginationElement.appendChild(pageLink);
+            }
+        }
 
       var storageRef = firebase.storage().ref();
 
@@ -208,8 +273,13 @@
         };
         cell3.appendChild(moreDetailsLink);
       });
+        // Show the first page initially
+        showPage(currentPage);
+
+        // Update pagination
+        updatePagination();
     }).catch(function(error) {
-      console.error('Error fetching folders:', error);
+        console.error('Error fetching folders:', error);
     });
 
 
@@ -221,7 +291,6 @@
     </script>
 </body>
 </html>
-
 
 
 
