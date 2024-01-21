@@ -162,7 +162,13 @@
     </main>
   </div>
 
-    <div class="pagination" id="pagination"></div>
+    <div class="pagination" id="pagination">
+        <a href="#" class="page-link" id="first-page">&lt;&lt; </a>
+        <a href="#" class="page-link" id="prev-page">&lt; </a>
+        <span id="page-numbers"></span>
+        <a href="#" class="page-link" id="next-page"> &gt;</a>
+        <a href="#" class="page-link" id="last-page"> &gt;&gt;</a>
+    </div>
 
     <!-- Include the non-module version of Firebase SDK scripts -->
 
@@ -202,7 +208,7 @@
         var itemsPerPage = 10; // Number of items per page
         var currentPage = 1;   // Current page, initially set to 1
 
-        function showPage(page) {
+ function showPage(page) {
             var rows = document.querySelectorAll('#folderTable tbody tr');
             var startIndex = (page - 1) * itemsPerPage;
             var endIndex = startIndex + itemsPerPage;
@@ -223,20 +229,57 @@
             var paginationElement = document.getElementById('pagination');
             paginationElement.innerHTML = '';
 
-            for (var i = 1; i <= totalPages; i++) {
-                var pageLink = document.createElement('a');
-                pageLink.href = '#';
-                pageLink.classList.add('page-link');
-                pageLink.textContent = i;
+            // First and Previous buttons
+            var firstPageLink = document.createElement('a');
+            firstPageLink.href = '#';
+            firstPageLink.classList.add('page-link');
+            firstPageLink.textContent = '<<';
+            firstPageLink.addEventListener('click', function (event) {
+                event.preventDefault();
+                currentPage = 1;
+                showPage(currentPage);
+            });
+            paginationElement.appendChild(firstPageLink);
 
-                pageLink.addEventListener('click', function (event) {
-                    event.preventDefault();
-                    currentPage = parseInt(event.target.textContent);
-                    showPage(currentPage);
-                });
+            var prevPageLink = document.createElement('a');
+            prevPageLink.href = '#';
+            prevPageLink.classList.add('page-link');
+            prevPageLink.textContent = '<';
+            prevPageLink.addEventListener('click', function (event) {
+                event.preventDefault();
+                currentPage = Math.max(1, currentPage - 1);
+                showPage(currentPage);
+            });
+            paginationElement.appendChild(prevPageLink);
 
-                paginationElement.appendChild(pageLink);
-            }
+            var pageNumbersSpan = document.createElement('span');
+            pageNumbersSpan.id = 'page-numbers';
+            pageNumbersSpan.style.display = 'none'; // Add this line to hide the page numbers
+            paginationElement.appendChild(pageNumbersSpan);
+
+
+            // Next and Last buttons
+            var nextPageLink = document.createElement('a');
+            nextPageLink.href = '#';
+            nextPageLink.classList.add('page-link');
+            nextPageLink.textContent = '>';
+            nextPageLink.addEventListener('click', function (event) {
+                event.preventDefault();
+                currentPage = Math.min(totalPages, currentPage + 1);
+                showPage(currentPage);
+            });
+            paginationElement.appendChild(nextPageLink);
+
+            var lastPageLink = document.createElement('a');
+            lastPageLink.href = '#';
+            lastPageLink.classList.add('page-link');
+            lastPageLink.textContent = '>>';
+            lastPageLink.addEventListener('click', function (event) {
+                event.preventDefault();
+                currentPage = totalPages;
+                showPage(currentPage);
+            });
+            paginationElement.appendChild(lastPageLink);
         }
 
       var storageRef = firebase.storage().ref();
@@ -291,6 +334,9 @@
     </script>
 </body>
 </html>
+
+
+
 
 
 
