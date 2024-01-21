@@ -354,10 +354,10 @@ def button3_click():
                 storage.child(firebase_image_path).put(local_image_path)
 
                 print(f"Image '{image}' uploaded to Firebase Storage with ticket name :  {formatted_date}")
-            #
-            # for image_file in image_files:
-            #     image_path = os.path.join(folder_path, image_file)
-            #     os.remove(image_path)
+            
+            for image_file in image_files:
+                image_path = os.path.join(folder_path, image_file)
+                os.remove(image_path)
 
         else:
             print("images folder is empty or have a lot of image please try again")
