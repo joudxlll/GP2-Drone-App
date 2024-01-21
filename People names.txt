@@ -1,36 +1,36 @@
 joud:
-  1. Kobe Bryant
-  2. J.K. Rowling
-  3. Warren Buffett
-  4. Virat Kohli 
-  5. Queen Elizabeth
-  6. David Beckham
-  7. Bill Gates
-  8. Barack Obama
-  9. Oprah Winfrey
-  10. Malala Yousafzai 
-  11. Usain Bolt
-  12. Michael Jordan
-  13. Albert Einstein
-  14. George Clooney
-  15. Michelle Obama
-  16. Richard Branson 
-  17. Tom Hanks
-  18. Evan Spiegel
-  19. Martin Luther King Jr.
-  20. Neil Armstrong
-  21. Sundar Pichai
-  22. Jack Dorsey
-  23. Travis Kalanick
-  24. Larry Page
-  25. Sergey Brin
-  26. Satya Nadella
-  27. Stewart Butterfield
-  28. Drew Houston
-  29. John Hanke
+1. Kobe Bryant
+2. J.K. Rowling
+3. Warren Buffett
+4. Virat Kohli 
+5. Queen Elizabeth
+6. David Beckham
+7. Bill Gates
+8. Barack Obama
+9. Oprah Winfrey
+10. Malala Yousafzai 
+11. Usain Bolt
+12. Michael Jordan
+13. Albert Einstein
+14. George Clooney
+15. Michelle Obama
+16. Richard Branson 
+17. Tom Hanks
+18. Evan Spiegel
+19. Martin Luther King Jr.
+20. Neil Armstrong
+21. Sundar Pichai
+22. Jack Dorsey
+23. Travis Kalanick
+24. Larry Page
+25. Sergey Brin
+26. Satya Nadella
+27. Stewart Butterfield
+28. Drew Houston
+29. John Hanke
 30. LeBron James
 31. Michael Phelps
-32. Roger Federer
+32. Roger Federer ————
 33. Tom Brady
 34. Rafael Nadal
 35. Novak Djokovic
@@ -160,6 +160,14 @@ joud:
 159. Saoirse Ronan
 160. Rooney Mara
 161. Andrew Garfield
+162. Colin Firth
+163. Matt Damon
+164. Daniel Craig
+165. Salma Hayek
+166. Rachel McAdams
+167. Eddie Redmayne
+168. Sean Penn
+
 
 
 
