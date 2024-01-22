@@ -243,7 +243,7 @@
 237. Jean Reno
 238. Kal Penn
 239. Omar Sharif
-240. John Leguizamo----
+240. John Leguizamo
 241. Amitabh Bachchan
 242. James Cameron
 243. Rowan Atkinson
@@ -251,7 +251,7 @@
 245. Hussein Mohamed
 246. Ismail Omar
 247. Hamad Abdullah
-248. Hani Khaled---
+248. Hani Khaled
 249. Abdul Malik Jaber
 250. Ryan Jassim
 251. Muhammad Thamer
