@@ -1,4 +1,6 @@
-1. Kobe Bryant----joud:
+134+168=302 images
+<<<<<joud:>>>>
+1. Kobe Bryant
 2. J.K. Rowling
 3. Warren Buffett
 4. Virat Kohli 
@@ -166,7 +168,11 @@
 166. Rachel McAdams
 167. Eddie Redmayne
 168. Sean Penn
-169. Andy Garcia ---Rana:
+
+
+
+<<<<<Rana:>>>> 
+169. Andy Garcia 
 170. Bob Iger
 171. Chris Evans
 172. Chris Hemsworth
@@ -228,7 +234,7 @@
 228. Luka Modric
 229. Marquinhos
 230. Bernardo Silva
-231. Yunis Abdelhamid----------------------
+231. Yunis Abdelhamid
 232. Antonio Banderas
 233. Dougray Scott
 234. Rodrigo Santoro
@@ -237,7 +243,7 @@
 237. Jean Reno
 238. Kal Penn
 239. Omar Sharif
-240. John Leguizamo
+240. John Leguizamo----
 241. Amitabh Bachchan
 242. James Cameron
 243. Rowan Atkinson
@@ -245,7 +251,7 @@
 245. Hussein Mohamed
 246. Ismail Omar
 247. Hamad Abdullah
-248. Hani Khaled
+248. Hani Khaled---
 249. Abdul Malik Jaber
 250. Ryan Jassim
 251. Muhammad Thamer
