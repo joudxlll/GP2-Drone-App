@@ -1,5 +1,4 @@
-joud:
-1. Kobe Bryant
+1. Kobe Bryant----joud:
 2. J.K. Rowling
 3. Warren Buffett
 4. Virat Kohli 
@@ -167,9 +166,7 @@ joud:
 166. Rachel McAdams
 167. Eddie Redmayne
 168. Sean Penn
-
-Rana:
-169. Andy Garcia
+169. Andy Garcia ---Rana:
 170. Bob Iger
 171. Chris Evans
 172. Chris Hemsworth
@@ -179,122 +176,127 @@ Rana:
 176. Idris Elba
 177. Jeff Bezos
 178. Jimmy Wales 
-179. Kevin Bacon
-180. Leonardo DiCaprio
-190. Mark Zuckerberg 
-191. Nasser Al-Khelaifi
-192. Robert De Niro
-193. Ryan Reynolds
-194. Ryan Gosling
-195. Steven Paul Jobs
-196. Theo James
-197. Tony Goldwyn
-198. Will Smith
-199. Karim Benzema
-200. Macaulay Culkin
-201. Yasser AlShahrani
-202. Daniel Radcliffe
-203. Jim Broadbent
-204. Alan Rickman
-205. John Heard
-206. Jason Statham
-207. Kareem Abdul Jabbar
-210. Stephen Curry
-211. Ma Huateng
-212. Steve Ballmer
-213. Robson Walton
-214. Amanicio Ortega
-215. Mukesh Ambani 
-216. David Koch
-217. Bernard Arnault 
-218. Casey Affleck
-219. Benicio del Toro
-220. Tim Robbins
-221. Morgan Freeman
-222. Javier Bardem
-223. Heath Ledger
-224. Christoph Waltz
-225. Jared Leto
-226. Keston Bledman
-227. Mohamed Salah
-228. Jorginho
-229. Erling Haaland
-230. Gianluigi Donnarumma
-231. Joshua Kimmich
-232. Giorgio Chiellini
-233. Phil Foden
-234. Thomas Müller
-235. Jan Oblak
-236. Trent Alexander Arnold
-237. Manuel Neuer
-238. Marco Verratti
-239. Achraf Hakimi
-240. Luka Modric
-241. Marquinhos
-242. Bernardo Silva
-243. Yunis Abdelhamid
-244. Antonio Banderas
-245. Dougray Scott
-246. Rodrigo Santoro
-247. Joaquim de Almeida
-248. Adrien Brody
-249. Jean Reno
-250. Kal Penn
-251. Omar Sharif
-252. John Leguizamo
-253. Amitabh Bachchan
-254. James Cameron
-255. Rowan Atkinson
-256. Ahmed Ali
-257. Hussein Mohamed
-258. Ismail Omar
-259. Hamad Abdullah
-260. Hani Khaled
-261. Abdul Malik Jaber
-262. Ryan Jassim
-263. Muhammad Thamer
-264. Jack Peter
-265. Ali Nasser
-266. Charlie
-267. Tyrrell Hatton  
-268. David Yates
-269. Georgie Jesus
-270. Will Wright
-271. John Carmack
-272. Todd Howard
-273. Mark Cerny
-274. Ed Boon
-275. Jim Ryan
-276. Angela Merkel
-277. Elizabeth Holmes
-278. Neil deGrasse Tyson
-279. Malcolm Gladwell
-280. Michael Bloomberg
-281. Sara Blakely
-282. Bertrand Piccard
-283. Ryan Murphy
-284. Karl Lagerfeld
-285. Giorgio Armani
-286. Christian Louboutin
-287. Tom Ford
-288. Paula Scher
-289. Kylian Mbappé
-290. Dara Khosrowshahi
-291. Chad Hurley
-292. Lewis Hamilton
-293. Sebastian Vettel
-294. Valentino Rossi
-295. Daniel Ricciardo
-296. Fernando Alonso
-297. Alain Prost
-298. Carlos Sainz Jr
-299. Mario Andretti
-300. Max Verstappen
-301. Kimi Räikkönen
-302. Charles Leclerc
-303. Jamie Chadwick
-304. Tobias Moers
-305.Andreas Seidl
-
-
-
+179. Leonardo DiCaprio
+180. Mark Zuckerberg 
+181. Nasser Al-Khelaifi
+182. Robert De Niro
+183. Ryan Reynolds
+184. Ryan Gosling
+185. Steven Paul Jobs
+186. Theo James
+187. Tony Goldwyn
+188. Will Smith
+189. Karim Benzema
+190. Macaulay Culkin
+191. Yasser AlShahrani
+192. Daniel Radcliffe
+193. Jim Broadbent
+194. Alan Rickman
+195. John Heard
+196. Jason Statham
+197. Kareem Abdul Jabbar
+198. Stephen Curry
+199. Ma Huateng
+200. Steve Ballmer
+201. Robson Walton
+202. Amanicio Ortega
+203. Mukesh Ambani 
+204. David Koch
+205. Bernard Arnault 
+206. Casey Affleck
+207. Benicio del Toro
+208. Tim Robbins
+209. Morgan Freeman
+210. Javier Bardem
+211. Heath Ledger
+212. Christoph Waltz
+213. Jared Leto
+214. Keston Bledman
+215. Mohamed Salah
+216. Jorginho
+217. Erling Haaland
+218. Gianluigi Donnarumma
+219. Joshua Kimmich
+220. Giorgio Chiellini
+221. Phil Foden
+222. Thomas Müller
+223. Jan Oblak
+224. Trent Alexander Arnold
+225. Manuel Neuer
+226. Marco Verratti
+227. Achraf Hakimi
+228. Luka Modric
+229. Marquinhos
+230. Bernardo Silva
+231. Yunis Abdelhamid----------------------
+232. Antonio Banderas
+233. Dougray Scott
+234. Rodrigo Santoro
+235. Joaquim de Almeida
+236. Adrien Brody
+237. Jean Reno
+238. Kal Penn
+239. Omar Sharif
+240. John Leguizamo
+241. Amitabh Bachchan
+242. James Cameron
+243. Rowan Atkinson
+244. Ahmed Ali
+245. Hussein Mohamed
+246. Ismail Omar
+247. Hamad Abdullah
+248. Hani Khaled
+249. Abdul Malik Jaber
+250. Ryan Jassim
+251. Muhammad Thamer
+252. Jack Peter
+253. Ali Nasser
+254. Charlie
+255. Tyrrell Hatton  
+256. David Yates
+257. Georgie Jesus
+258. Will Wright
+259. John Carmack
+260. Todd Howard
+261. Mark Cerny
+262. Ed Boon
+263. Jim Ryan
+264. Angela Merkel
+265. Elizabeth Holmes
+266. Neil deGrasse Tyson
+267. Malcolm Gladwell
+268. Michael Bloomberg
+269. Sara Blakely
+270. Bertrand Piccard
+271. Ryan Murphy
+272. Karl Lagerfeld
+273. Giorgio Armani
+274. Christian Louboutin
+275. Tom Ford
+276. Paula Scher
+277. Kylian Mbappé
+278. Dara Khosrowshahi
+279. Chad Hurley
+280. Lewis Hamilton
+281. Sebastian Vettel
+282. Valentino Rossi
+283. Daniel Ricciardo
+284. Fernando Alonso
+285. Alain Prost
+286. Carlos Sainz Jr
+287. Mario Andretti
+288. Max Verstappen
+289. Kimi Räikkönen
+290. Charles Leclerc
+291. Jamie Chadwick
+292. Tobias Moers
+293. Andreas Seidl
+294. Bob Beckel
+295. Jennie Gow
+296. Roberto Ravaglia
+297. Diana Carter
+298. Susie Wolff
+299. Nancy Roman
+300. David Dewhurst
+301. Christian Horner
+302. Felipe Massa
