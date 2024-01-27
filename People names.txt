@@ -1,4 +1,4 @@
-134+168=302 images
+300 images
 <<<<<joud:>>>>
 1. Kobe Bryant
 2. J.K. Rowling
@@ -172,26 +172,27 @@
 
 
 <<<<<Rana:>>>> 
-169. Andy Garcia 
-170. Bob Iger
-171. Chris Evans
-172. Chris Hemsworth
-173. Dwayne Johnson
-174. Elon musk
-175. Henry Cavill
-176. Idris Elba
-177. Jeff Bezos
-178. Jimmy Wales 
-179. Leonardo DiCaprio
+168. Andy Garcia 
+169. Bob Iger
+170. Chris Evans
+171. Chris Hemsworth
+172. Felipe Massa
+173. Elon musk
+174. Henry Cavill
+175. Idris Elba
+176. Christian Horner
+177. Jimmy Wales 
+178. Jim Carre
+179. Matthew McConaughey
 180. Mark Zuckerberg 
 181. Nasser Al-Khelaifi
 182. Robert De Niro
-183. Ryan Reynolds
+183. Russell Crowe...edit
 184. Ryan Gosling
 185. Steven Paul Jobs
 186. Theo James
 187. Tony Goldwyn
-188. Will Smith
+188. Buzz Aldrin
 189. Karim Benzema
 190. Macaulay Culkin
 191. Yasser AlShahrani
@@ -212,7 +213,7 @@
 206. Casey Affleck
 207. Benicio del Toro
 208. Tim Robbins
-209. Morgan Freeman
+209. Chris Hadfield
 210. Javier Bardem
 211. Heath Ledger
 212. Christoph Waltz
@@ -261,7 +262,7 @@
 255. Tyrrell Hatton  
 256. David Yates
 257. Georgie Jesus
-258. Will Wright
+258. Sam Cristoforetti
 259. John Carmack
 260. Todd Howard
 261. Mark Cerny
@@ -304,5 +305,3 @@
 298. Susie Wolff
 299. Nancy Roman
 300. David Dewhurst
-301. Christian Horner
-302. Felipe Massa
