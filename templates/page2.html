@@ -17,13 +17,15 @@
   background-color: #949494;
 }
 .home-container01 {
-  flex: 0 0 auto;
-  width: 1301px;
-  height: 803px;
-  display: flex;
-  align-items: flex-start;
-  flex-direction: column;
-  background-color: #D9D9D9;
+  width: 898px;
+  height: 480px;
+  opacity: 0.9;
+  border-color: #5B7280;
+  border-width: 7px;
+  border-radius: 30px;
+  background-color: #ffffff;
+  margin-top:-15vh;
+  
 }
 .home-container02 {
   width: 1292px;
@@ -282,22 +284,14 @@
     align-items: center;
     flex-direction: row;
     justify-content: center;
-    background-image: url('background3.png'); /* Replace with your background image path */
+    background-image: url('background3.png');
     background-size: cover;
     background-position: center;
   }
   .home-button {
     margin: var(--dl-space-space-threeunits);
   }
-  .home-container01 {
-    width: 898px;
-    height: 536px;
-    opacity: 0.9;
-    border-color: #5B7280;
-    border-width: 7px;
-    border-radius: 30px;
-    background-color: #ffffff;
-  }
+
   .home-container02 {
     width: 894px;
     height: 237px;
@@ -412,6 +406,19 @@
     top: 56px;
     left: 244px;
   }
+  .button-home-button{
+    background-image: linear-gradient(135deg, #526774 10%, #526774 100%);
+    color: #fff;
+    font-size: 16px;
+    padding: 12px 35px;
+    border-radius: 50px;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    margin-left: 90px;
+    margin-bottom:-5vh;
+    position:"fixed";
+  }
 }
 
     </style>
@@ -419,11 +426,10 @@
 </head>
     <body>
         <div>
+          <button type="button" id="back" class="button-home-button">
+            &lt; Back
+          </button>
           <div class="home-container">
-
-            <button type="button" id="back" class="button home-button">
-              &lt; Back
-            </button>
             <script>
                 // Your existing Firebase initialization code
 
@@ -569,9 +575,9 @@ function editLabelId(id, prefix) {
   return storageRef.listAll().then(function(result) {
     result.items.forEach(function(item) {
       if (item.name.startsWith(prefix)) {
-        var imageName = item.name.split('*')[1];
-        // Split image name from "*" to ".", and then take the part before the first dot
-        imageName = imageName.split('*').join('.').split('.')[0];
+        var imageName = item.name.split('+')[1];
+        // Split image name from "+" to ".", and then take the part before the first dot
+        imageName = imageName.split('+').join('.').split('.')[0];
         document.getElementById(id).innerText = imageName;
       }
     });
