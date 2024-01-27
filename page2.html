@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Report</title>
+
+
+    <style>
+.home-container {
+  width: 100%;
+  display: flex;
+  overflow: auto;
+  min-height: 100vh;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #949494;
+}
+.home-container01 {
+  width: 898px;
+  height: 480px;
+  opacity: 0.9;
+  border-color: #5B7280;
+  border-width: 7px;
+  border-radius: 30px;
+  background-color: #ffffff;
+  margin-top:-15vh;
+  
+}
+.home-container02 {
+  width: 1292px;
+  height: 379px;
+  display: flex;
+  margin-top: var(--dl-space-space-oneandhalfunits);
+  align-items: center;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.home-container03 {
+  width: 661px;
+  height: 320px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #D9D9D9;
+}
+.home-container04 {
+  width: 647px;
+  height: 250px;
+  display: flex;
+  position: relative;
+  align-self: center;
+  margin-top: var(--dl-space-space-halfunit);
+  align-items: center;
+  margin-bottom: var(--dl-space-space-halfunit);
+  flex-direction: row;
+  justify-content: center;
+  background-color: #e8e8e8;
+}
+.home-container05 {
+  flex: 0 0 auto;
+  width: 269px;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: #f9f7f7;
+}
+.home-text {
+  font-size: 20px;
+  margin-top: 0px;
+  line-height: 2;
+  margin-bottom: 0px;
+}
+.home-image {
+  width: 200px;
+  height: 130px;
+  margin-top: var(--dl-space-space-unit);
+  object-fit: cover;
+}
+.home-container06 {
+  flex: 0 0 auto;
+  width: 269px;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: #f9f7f7;
+}
+.home-text01 {
+  font-size: 20px;
+  margin-top: 0px;
+  line-height: 2;
+  margin-bottom: 0px;
+}
+.home-image1 {
+  width: 200px;
+  height: 130px;
+  margin-top: var(--dl-space-space-unit);
+  object-fit: cover;
+}
+.home-container07 {
+  width: 661px;
+  height: 320px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #D9D9D9;
+}
+.home-container08 {
+  width: 646px;
+  height: 250px;
+  display: flex;
+  position: relative;
+  margin-top: var(--dl-space-space-halfunit);
+  align-items: center;
+  margin-bottom: var(--dl-space-space-halfunit);
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: #e8e8e8;
+}
+.home-text02 {
+  top: 63px;
+  left: 160px;
+  position: absolute;
+}
+.home-text03 {
+  top: 134px;
+  left: 159px;
+  position: absolute;
+}
+.home-text04 {
+  top: 63px;
+  left: 397px;
+  position: absolute;
+}
+.home-text05 {
+  top: 87px;
+  left: 159px;
+  position: absolute;
+}
+.home-text06 {
+  top: 159px;
+  left: 159px;
+  position: absolute;
+}
+.home-text07 {
+  top: 87px;
+  left: 398px;
+  position: absolute;
+}
+.home-container09 {
+  width: 1292px;
+  height: 379px;
+  display: flex;
+  margin-top: var(--dl-space-space-oneandhalfunits);
+  align-items: center;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.home-container10 {
+  width: 661px;
+  height: 320px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #D9D9D9;
+}
+.home-container11 {
+  width: 647px;
+  height: 250px;
+  display: flex;
+  position: relative;
+  align-self: center;
+  margin-top: var(--dl-space-space-halfunit);
+  align-items: center;
+  margin-bottom: var(--dl-space-space-halfunit);
+  flex-direction: row;
+  justify-content: center;
+  background-color: #e8e8e8;
+}
+.home-container12 {
+  flex: 0 0 auto;
+  width: 269px;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: #f9f7f7;
+}
+.home-text08 {
+  font-size: 20px;
+  margin-top: 0px;
+  line-height: 2;
+  margin-bottom: 0px;
+}
+.home-image2 {
+  width: 200px;
+  height: 130px;
+  margin-top: var(--dl-space-space-unit);
+  object-fit: cover;
+}
+.home-container13 {
+  flex: 0 0 auto;
+  width: 269px;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: #f9f7f7;
+}
+.home-text09 {
+  font-size: 20px;
+  margin-top: 0px;
+  line-height: 2;
+  margin-bottom: 0px;
+}
+.home-image3 {
+  width: 200px;
+  height: 130px;
+  margin-top: var(--dl-space-space-unit);
+  object-fit: cover;
+}
+.home-container14 {
+  width: 661px;
+  height: 320px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #D9D9D9;
+}
+.home-container15 {
+  width: 646px;
+  height: 250px;
+  display: flex;
+  position: relative;
+  margin-top: var(--dl-space-space-halfunit);
+  align-items: center;
+  margin-bottom: var(--dl-space-space-halfunit);
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: #e8e8e8;
+}
+.home-text10 {
+  top: 63px;
+  left: 160px;
+  position: absolute;
+}
+.home-text11 {
+  top: 134px;
+  left: 159px;
+  position: absolute;
+}
+.home-text12 {
+  top: 63px;
+  left: 397px;
+  position: absolute;
+}
+.home-text13 {
+  top: 87px;
+  left: 159px;
+  position: absolute;
+}
+.home-text14 {
+  top: 159px;
+  left: 159px;
+  position: absolute;
+}
+.home-text15 {
+  top: 87px;
+  left: 398px;
+  position: absolute;
+}
+@media(max-width: 1920px) {
+  .home-container {
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    background-image: url('background3.png');
+    background-size: cover;
+    background-position: center;
+  }
+  .home-button {
+    margin: var(--dl-space-space-threeunits);
+  }
+
+  .home-container02 {
+    width: 894px;
+    height: 237px;
+  }
+  .home-container03 {
+    width: 544px;
+    height: 252px;
+    background-color: transparent;
+  }
+  .home-container04 {
+    width: 538px;
+    background-color: transparent;
+  }
+  .home-container05 {
+    background-color: transparent;
+  }
+  .home-container06 {
+    background-color: transparent;
+  }
+  .home-text01 {
+    font-size: 20px;
+    line-height: 2;
+  }
+  .home-container07 {
+    width: 348px;
+    height: 207px;
+    background-color: transparent;
+  }
+  .home-container08 {
+    width: 356px;
+    height: 179px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    background-color: transparent;
+  }
+  .home-text02 {
+    top: 34px;
+    left: 58px;
+  }
+  .home-text03 {
+    top: 106px;
+    left: 57px;
+  }
+  .home-text04 {
+    top: 34px;
+    left: 244px;
+  }
+  .home-text05 {
+    top: 56px;
+    left: 58px;
+  }
+  .home-text06 {
+    top: 129px;
+    left: 57px;
+  }
+  .home-text07 {
+    top: 56px;
+    left: 244px;
+  }
+  .home-container09 {
+    width: 894px;
+    height: 226px;
+  }
+  .home-container10 {
+    width: 544px;
+    height: 100%;
+    background-color: transparent;
+  }
+  .home-container11 {
+    width: 538px;
+    background-color: transparent;
+  }
+  .home-container12 {
+    background-color: transparent;
+  }
+  .home-container13 {
+    background-color: transparent;
+  }
+  .home-container14 {
+    width: 348px;
+    height: 207px;
+    background-color: transparent;
+  }
+  .home-container15 {
+    width: 356px;
+    height: 179px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    background-color: transparent;
+  }
+  .home-text10 {
+    top: 34px;
+    left: 58px;
+  }
+  .home-text11 {
+    top: 106px;
+    left: 57px;
+  }
+  .home-text12 {
+    top: 34px;
+    left: 244px;
+  }
+  .home-text13 {
+    top: 56px;
+    left: 58px;
+  }
+  .home-text14 {
+    top: 129px;
+    left: 57px;
+  }
+  .home-text15 {
+    top: 56px;
+    left: 244px;
+  }
+  .button-home-button{
+    background-image: linear-gradient(135deg, #526774 10%, #526774 100%);
+    color: #fff;
+    font-size: 16px;
+    padding: 12px 35px;
+    border-radius: 50px;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    margin-left: 90px;
+    margin-bottom:-5vh;
+    position:"fixed";
+  }
+}
+
+    </style>
+
+</head>
+    <body>
+        <div>
+          <button type="button" id="back" class="button-home-button">
+            &lt; Back
+          </button>
+          <div class="home-container">
+            <script>
+                // Your existing Firebase initialization code
+
+                // Add event listener to the back button
+                document.getElementById('back').addEventListener('click', function() {
+                    // Navigate to the previous page
+                    window.history.back();
+                });
+            </script>
+
+
+<div class="home-container01" style="  border: 5px solid #5B7280;">
+    <div class="home-container02">
+      <div class="home-container03">
+        <div class="home-container04">
+          <div class="home-container05">
+            <label class="home-text">Original Face image</label>
+            <img
+              src="https://play.teleporthq.io/static/svg/default-img.svg"
+              alt="image"
+              id="Orignal_Face1_image"
+              class="home-image"
+            />
+          </div>
+          <div class="home-container06">
+            <label class="home-text01">Captured Face Image</label>
+            <img
+              src="https://play.teleporthq.io/static/svg/default-img.svg"
+              alt="image"
+              id="Captured_Face1_Image"
+              class="home-image1"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="home-container07">
+        <div class="home-container08">
+          <label class="home-text02">Person 1 Name</label>
+          <label class="home-text03">Date and Time</label>
+          <label class="home-text04">ID Number</label>
+          <label id="person_1_name" class="home-text05">xxxxxxx</label>
+          <label id="date1" class="home-text06">xxxxxxxxx</label>
+          <label id="person_1_id" class="home-text07">xxxxxxxxx</label>
+        </div>
+      </div>
+    </div>
+    <div class="home-container09">
+      <div class="home-container10">
+        <div class="home-container11">
+          <div class="home-container12">
+            <label class="home-text08">Original Face image</label>
+            <img
+              src="https://play.teleporthq.io/static/svg/default-img.svg"
+              alt="image"
+              id="Orignal_Face2_image"
+              class="home-image2"
+            />
+          </div>
+          <div class="home-container13">
+            <label class="home-text09">Captured Face Image</label>
+            <img
+              src="https://play.teleporthq.io/static/svg/default-img.svg"
+              alt="image"
+              id="Captured_Face2_Image"
+              class="home-image3"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="home-container14">
+        <div class="home-container15">
+          <label class="home-text10">Person 2 Name</label>
+          <label class="home-text11">Date and Time</label>
+          <label class="home-text12">ID Number</label>
+          <label id="person_2_name" class="home-text13">xxxxxxxxx</label>
+          <label id="date2" class="home-text14">xxxxxxxxx</label>
+          <label id="person_2_id" class="home-text15">xxxxxxxxx</label>
+        </div>
+      </div>
+    </div>
+  </div>
+          </div>
+        </div>
+  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-storage.js"></script>
+  <script>
+  var firebaseConfig = {
+      apiKey: "AIzaSyD1L5kjuB6UYTPA8qjzepKQbLTV5BvNwC0",
+      authDomain: "drone-app-e0017.firebaseapp.com",
+      projectId: "drone-app-e0017",
+      storageBucket: "drone-app-e0017.appspot.com",
+      messagingSenderId: "768272782556",
+      appId: "1:768272782556:web:92e165813acee47877d019",
+      };
+  firebase.initializeApp(firebaseConfig);
+
+
+        // Check if the user is authenticated
+        firebase.auth().onAuthStateChanged(function (user) {
+            if (!user) {
+                // Redirect to login page if not logged in
+                window.location.replace("login.html");
+            }
+        });
+
+
+// Retrieve folder name from URL hash
+  var folderName = decodeURIComponent(window.location.hash.substring(1));
+
+  // Function to get image URL based on prefix
+  function getImageUrl(prefix) {
+    return storageRef.listAll().then(function(result) {
+      return new Promise(function(resolve, reject) {
+        var imageUrl = '';
+        result.items.forEach(function(item) {
+          if (item.name.startsWith(prefix)) {
+            item.getDownloadURL().then(function(url) {
+              imageUrl = url;
+              resolve(imageUrl);
+            });
+          }
+        });
+      });
+    });
+  }
+
+  // Function to split image name and set label name
+  function editLabel(id, prefix) {
+    return storageRef.listAll().then(function(result) {
+      result.items.forEach(function(item) {
+        if (item.name.startsWith(prefix)) {
+          var imageName = item.name.split('_')[1];
+          document.getElementById(id).innerText = imageName;
+        }
+      });
+    });
+  }
+
+// Function to split image name and set label for ID
+function editLabelId(id, prefix) {
+  return storageRef.listAll().then(function(result) {
+    result.items.forEach(function(item) {
+      if (item.name.startsWith(prefix)) {
+        var imageName = item.name.split('+')[1];
+        // Split image name from "+" to ".", and then take the part before the first dot
+        imageName = imageName.split('+').join('.').split('.')[0];
+        document.getElementById(id).innerText = imageName;
+      }
+    });
+  });
+}
+
+  // Function to set date labels
+  function editDate() {
+    document.getElementById('date1').innerText = folderName;
+    document.getElementById('date2').innerText = folderName;
+  }
+
+  // Function to handle all image-related tasks
+function handleImages() {
+  storageRef.listAll().then(function(result) {
+    result.items.forEach(function(item) {
+      item.getDownloadURL().then(function(url) {
+        if (item.name.startsWith('person(1)1_')) {
+          document.getElementById('Orignal_Face1_image').src = url;
+        } else if (item.name.startsWith('person(1)_')) {
+          document.getElementById('Captured_Face1_Image').src = url;
+        } else if (item.name.startsWith('person(2)2_')) {
+          document.getElementById('Orignal_Face2_image').src = url;
+        } else if (item.name.startsWith('person(2)_')) {
+          document.getElementById('Captured_Face2_Image').src = url;
+        }
+      });
+    });
+  });
+
+  // Set labels and IDs
+  editLabel('person_1_name', 'person(1)_');
+  editLabel('person_2_name', 'person(2)_');
+
+  editLabelId('person_1_id', 'person(1)_');
+  editLabelId('person_2_id', 'person(2)_');
+
+  // Set date labels
+  editDate();
+}
+
+
+  // Fetch images from Firebase Storage and handle them
+  var storageRef = firebase.storage().ref('/' + folderName);
+  handleImages();
+</script>
+
+</body>
+</html>
