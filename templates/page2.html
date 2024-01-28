@@ -575,9 +575,9 @@ function editLabelId(id, prefix) {
   return storageRef.listAll().then(function(result) {
     result.items.forEach(function(item) {
       if (item.name.startsWith(prefix)) {
-        var imageName = item.name.split('+')[1];
-        // Split image name from "+" to ".", and then take the part before the first dot
-        imageName = imageName.split('+').join('.').split('.')[0];
+        var imageName = item.name.split('*')[1];
+        // Split image name from "*" to ".", and then take the part before the first dot
+        imageName = imageName.split('*').join('.').split('.')[0];
         document.getElementById(id).innerText = imageName;
       }
     });
