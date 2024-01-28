@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firebase Storage Folders</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0px;
+            background-image: url('background3.png');
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            height: 100vh;
+        }
+
+        header {
+            background-color: #21323D;
+            color: #FFFFFF;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            z-index: 1;
+            padding-top: 0px;
+            padding-bottom: 0px;
+            padding-left: 0px;
+        }
+
+        header a {
+            color: #FFFFFF;
+            text-decoration: none;
+            margin: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        #folder-input-div {
+            font-size: 18px;
+            color: white;
+            position: absolute;
+            left: 40%;
+            right: 45%;
+            top: 30%;
+            transform: translateY(-50%);
+            margin: auto;
+            width: 100%;
+        }
+
+        #matching-folders {
+            list-style-type: none;
+            padding: 12;
+            max-height: 300px; /* Set a max height for the results list */
+            overflow-y: auto; /* Enable vertical scrolling for overflow */
+
+        }
+
+        #matching-folders li {
+            margin: 5px 0;
+        }
+
+        #folder-input {
+            margin-top: 20vh;
+            font-size: 18px;
+            background-color: #526774;
+            color: #FFFFFF;
+            padding-left: 30px;
+            color: white;
+            padding-right: 20px;
+            background-image: url('search_icon.png');
+            background-repeat: no-repeat;
+            background-position: center right 8px;
+            background-size: 16px;
+        }
+
+        #folder-input::placeholder {
+            color: white;
+        }
+
+        #folder-input::before {
+            content: url('search_icon.png');
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <!-- Left side -->
+        <div style="display: flex; align-items: center;">
+            <!-- Logo -->
+            <img src="logo1.png" alt="Logo" height="60" style="margin:15px;">
+            <!-- Home page link with icon -->
+            <a href="main.html" id="home-link"><img src="home.png" alt="Home" height="20" style="margin-right: 10px;"> Home</a>
+            <!-- Report page link with icon -->
+            <a href="reports.html" id="report-link"><img src="report.png" alt="Report" height="20" style="margin-right: 10px;"> Report</a>
+        </div>
+        <!-- Right side -->
+        <div style="display: flex; align-items: center; margin-right: 30px;">
+            <!-- Sign out link with icon -->
+            <a href="#" onclick="signOut()"><img src="log-out.png" alt="Sign Out" height="30" style="margin-right: 10px;"> Sign Out</a>
+        </div>
+
+        <script>
+            function signOut() {
+                firebase.auth().signOut().then(function () {
+                    window.location.replace("login.html");
+                }).catch(function (error) {
+                    console.error("Sign out error:", error);
+                });
+            }
+        </script>
+
+    </header>
+
+    <div id="folder-input-div">
+        <!-- Input field for folder name with placeholder -->
+        <input type="text" id="folder-input" placeholder="Enter Ticket ID" oninput="searchFolderNames()">
+
+        <!-- List to display matching folder names as hyperlinks -->
+        <ul id="matching-folders"></ul>
+    </div>
+
+    <!-- Include the non-module version of Firebase SDK scripts -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.2/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.2/firebase-storage-compat.js"></script>
+
+    <script>
+        // Replace with your actual Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyD1L5kjuB6UYTPA8qjzepKQbLTV5BvNwC0",
+            authDomain: "drone-app-e0017.firebaseapp.com",
+            projectId: "drone-app-e0017",
+            storageBucket: "drone-app-e0017.appspot.com",
+            messagingSenderId: "768272782556",
+            appId: "1:768272782556:web:92e165813acee47877d019",
+        };
+
+        firebase.initializeApp(firebaseConfig);
+
+        firebase.auth().onAuthStateChanged(function (user) {
+            if (!user) {
+                window.location.replace("login.html");
+            }
+        });
+
+        function searchFolderNames() {
+            var folderInput = document.getElementById('folder-input');
+            var matchingFoldersList = document.getElementById('matching-folders');
+
+            var storageRef = firebase.storage().ref();
+
+            storageRef.listAll()
+                .then(function (result) {
+                    var folderNames = result.prefixes.map(function (prefix) {
+                        return prefix.name;
+                    });
+
+                    var searchTerm = folderInput.value.toLowerCase();
+                    var matchingFolders = folderNames.filter(function (folderName) {
+                        return folderName.toLowerCase().includes(searchTerm);
+                    });
+
+                    displayMatchingFolders(matchingFoldersList, matchingFolders);
+                })
+                .catch(function (error) {
+                    console.error('Error listing items:', error);
+                    alert('Error retrieving folder names. Check the console for details.');
+                });
+        }
+
+        function displayMatchingFolders(container, folders) {
+            container.innerHTML = '';
+
+            folders.forEach(function (folder) {
+                var listItem = document.createElement('li');
+                var hyperlink = document.createElement('a');
+
+                hyperlink.textContent = folder;
+                hyperlink.href = 'page2.html#' + encodeURIComponent(folder);
+
+                listItem.appendChild(hyperlink);
+                container.appendChild(listItem);
+            });
+        }
+    </script>
+
+</body>
+
+</html>
