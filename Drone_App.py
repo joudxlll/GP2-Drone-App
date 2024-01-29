@@ -13,6 +13,7 @@ import pyrebase
 from firebase_admin import credentials, storage
 import shutil
 import pickle
+from djitellopy import tello, Tello
 from OurData import known_images
 
 # firebase connection _____________________
@@ -49,10 +50,7 @@ known_encodings = loaded_data['encodings']
 known_names = loaded_data['names']
 
 
-
-
 # Define global variables
-ret = None
 frame = None
 img = None
 name = None
@@ -65,32 +63,38 @@ person2Name = None
 # Initialize pygame mixer for sound
 pygame.mixer.init()
 
+# Create a Tello object
+drone = tello.Tello()
 
+# Connect to the Tello drone
+drone.connect()
+
+# Start video streaming
+drone.streamon()
 
 
 def update_frame():
-    global ret, frame, name, face_name
+    global frame, name, face_name
     face_name = None
-    ret, frame = cap.read()
 
-    if ret:
-        frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-        height, width, _ = frame.shape
+    # Get video frame from Tello
+    frame = drone.get_frame_read().frame
+    height, width, _ = frame.shape
 
-        # Calculate the width to maintain the original aspect ratio
-        new_width = int((video_height / height) * width)
-        frame = cv2.resize(frame, (new_width, video_height))
+    # Calculate the width to maintain the original aspect ratio
+    new_width = int((video_height / height) * width)
+    frame = cv2.resize(frame, (new_width, video_height))
 
-        # Perform face recognition
-        recognize_known_faces()
+    # Perform face recognition
+    recognize_known_faces()
 
-        # Convert the modified frame to an image
-        img = Image.fromarray(frame)
-        img = ImageTk.PhotoImage(img)
+    # Convert the modified frame to an image
+    img = Image.fromarray(frame)
+    img = ImageTk.PhotoImage(img)
 
-        # Update the video_label with the new image
-        video_label.config(image=img)
-        video_label.image = img
+    # Update the video_label with the new image
+    video_label.config(image=img)
+    video_label.image = img
 
     root.after(10, update_frame)
 
@@ -101,7 +105,8 @@ def recognize_known_faces():
 
     # Find face locations and face encodings in the current frame
     face_locations = face_recognition.face_locations(frame)
-    face_encodings = face_recognition.face_encodings(frame, face_locations)
+    frameconv = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+    face_encodings = face_recognition.face_encodings(frameconv, face_locations)
 
     # Loop through each face found in the frame
     for (top, right, bottom, left), face_encoding in zip(face_locations, face_encodings):
@@ -142,7 +147,6 @@ def recognize_known_faces():
 
         # Draw the text on the frame
         cv2.putText(frame, name, (text_x, text_y), font, text_size, text_color, text_thickness)
-
 
 
 
@@ -215,7 +219,6 @@ def button1_click():
         print("no face")
         print("_______________________________________________")
     face_name = None
-
 
 
 
@@ -349,12 +352,12 @@ def button3_click():
 
             # Upload filtered images to Firebase Storage in the "my_images" folder
             for image in filtered_images:
-                local_image_path = os.path.join(images_folder, image)
+                local_image_path = os.path.join(images_folder, image) #faces/person1.png
                 firebase_image_path = os.path.join(f"{formatted_date}", image)
                 storage.child(firebase_image_path).put(local_image_path)
 
                 print(f"Image '{image}' uploaded to Firebase Storage with ticket name :  {formatted_date}")
-            
+
             for image_file in image_files:
                 image_path = os.path.join(folder_path, image_file)
                 os.remove(image_path)
@@ -365,9 +368,6 @@ def button3_click():
     else:
         print("names is empty please try again")
         print("_______________________________________________")
-
-
-
 
 
 
@@ -450,12 +450,14 @@ button2.place(x=315, y=600, width=180, height=50)
 button3.place(x=515, y=600, width=180, height=50)
 button4.place(x=715, y=600, width=180, height=50)
 
-
-# Start the video streaming
+# Start the video streaming from Tello drone
 update_frame()
 
 # Start the main loop
 root.mainloop()
 
-# Release the webcam
-cap.release()
+# Stop video streaming from Tello drone
+drone.streamoff()
+
+# End the Tello connection
+drone.end()
