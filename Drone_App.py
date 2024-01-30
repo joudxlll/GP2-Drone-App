@@ -40,7 +40,6 @@ firebase_database = firebase_admin.initialize_app(cred_database, {'databaseURL':
 
 
 
-
 # Load the encoded data from the text file
 with open('encoded_data.txt', 'rb') as file:
     loaded_data = pickle.load(file)
@@ -166,17 +165,19 @@ def button1_click():
     files = os.listdir(folder_path)
     # Find files with the specified first word in the name
     matching_files = [file for file in files if file.lower().startswith(first_word.lower())]
-    # Delete matching files
-    for file in matching_files:
-        file_path = os.path.join(folder_path, file)
-        os.remove(file_path)
-        print(f"Deleted: {file_path}")
-    print("Deletion old image person 1 complete.")
-
 
     global ret, frame, name, face_name, person1Name, known_images
 
     if face_name != None and face_name != "Unknown":
+        # Check if matching_files has images of person(1) previously
+        if matching_files:
+            # Delete matching files
+            for file in matching_files:
+                file_path = os.path.join(folder_path, file)
+                os.remove(file_path)
+                print(f"Deleted: {file_path}")
+            print("Deletion old image person 1 complete.")
+
         print(f"person 1 name is : {face_name}")
         person1Name = face_name
 
@@ -184,7 +185,6 @@ def button1_click():
         save_path = f"faces/person(1)_{face_name}_*{int(time.time())}.jpg"
         cv2.imwrite(save_path, cv2.cvtColor(frame, cv2.COLOR_RGB2BGR))
         print(f"Image saved at {save_path}")
-
 
 
         # Print the path of the known image for the recognized person
@@ -238,18 +238,19 @@ def button2_click():
     files = os.listdir(folder_path)
     # Find files with the specified first word in the name
     matching_files = [file for file in files if file.lower().startswith(first_word.lower())]
-    # Delete matching files
-    for file in matching_files:
-        file_path = os.path.join(folder_path, file)
-        os.remove(file_path)
-        print(f"Deleted: {file_path}")
-    print("Deletion old image person 2 complete.")
-
-
 
     global ret, frame, name, face_name, person2Name
 
     if face_name != None and face_name != "Unknown":
+        # Check if matching_files has images of person(2) previously
+        if matching_files:
+            # Delete matching files
+            for file in matching_files:
+                file_path = os.path.join(folder_path, file)
+                os.remove(file_path)
+                print(f"Deleted: {file_path}")
+            print("Deletion old image person 2 complete.")
+            
         print(f"person 2 name is :{face_name}")
         person2Name = face_name
 
@@ -464,3 +465,4 @@ drone.streamoff()
 
 # End the Tello connection
 drone.end()
+
