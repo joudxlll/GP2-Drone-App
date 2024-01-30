@@ -216,7 +216,7 @@ def button1_click():
         print("_______________________________________________")
 
     else:
-        print("no face")
+        print("face is unknown")
         print("_______________________________________________")
     face_name = None
 
@@ -288,7 +288,7 @@ def button2_click():
         print("_______________________________________________")
 
     else:
-        print("no face")
+        print("face is unknown")
         print("_______________________________________________")
     face_name = None
 
@@ -390,16 +390,19 @@ def button4_click():
     # Filter only image files (you can customize the image file extensions)
     image_files = [file for file in files if file.lower().endswith(('.png', '.jpg', '.jpeg'))]
 
-    try:
+    # Check if image_files is empty and print the statement accordingly
+    if not image_files:
+        print("the data is empty !")
+        print("_______________________________________________")
+    else:
         # Delete all image files
         for image_file in image_files:
             image_path = os.path.join(folder_path, image_file)
             os.remove(image_path)
-    except:
-        print("the data is empty !")
+
+        print("All data is rest")
         print("_______________________________________________")
-    print("All data is rest")
-    print("_______________________________________________")
+
 
 
 # Create the main window
